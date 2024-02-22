@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 from your_blueprint import your_blueprint
 
@@ -47,7 +47,7 @@ def submit_form():
         send_email(name, email, message)
 
         #Vraća na index.html nakon slanja mail-a
-        return render_template('index.html')
+        return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
